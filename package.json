@@ -1,0 +1,25 @@
+{
+  "name": "ts-patterns",
+  "version": "0.1.0",
+  "private": false,
+  "type": "module",
+  "exports": {
+    ".": "./dist/index.js",
+    "./brand": "./dist/brand.js",
+    "./result": "./dist/result.js",
+    "./option": "./dist/option.js",
+    "./builder": "./dist/builder.js",
+    "./guards": "./dist/guards.js",
+    "./match": "./dist/match.js"
+  },
+  "files": ["dist/"],
+  "scripts": {
+    "build": "bun build --target node --format esm --outdir dist src/index.ts src/brand.ts src/result.ts src/option.ts src/builder.ts src/guards.ts src/match.ts && tsc --project tsconfig.build.json --emitDeclarationOnly",
+    "test": "bun test",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "bun run build && bun run test && bun run typecheck"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.2"
+  }
+}
