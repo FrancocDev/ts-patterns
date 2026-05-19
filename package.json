@@ -1,6 +1,11 @@
 {
   "name": "@francocdev/ts-patterns",
-  "version": "0.1.1",
+  "version": "0.1.2",
+  "description": "TypeScript utility types: branded types, Result/Option monads, builder pattern, guards, pattern matching",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FrancocDev/ts-patterns.git"
+  },
   "private": false,
   "type": "module",
   "exports": {
