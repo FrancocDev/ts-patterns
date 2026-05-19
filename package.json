@@ -1,6 +1,6 @@
 {
   "name": "@francocdev/ts-patterns",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "TypeScript utility types: branded types, Result/Option monads, builder pattern, guards, pattern matching",
   "repository": {
     "type": "git",
@@ -17,7 +17,9 @@
     "./guards": "./dist/guards.js",
     "./match": "./dist/match.js"
   },
-  "files": ["dist/"],
+  "files": [
+    "dist/"
+  ],
   "scripts": {
     "build": "bun build --target node --format esm --outdir dist src/index.ts src/brand.ts src/result.ts src/option.ts src/builder.ts src/guards.ts src/match.ts && bunx tsc --project tsconfig.build.json --emitDeclarationOnly",
     "test": "bun test",
