@@ -51,6 +51,10 @@ export const isUndefined: Guard<undefined> = (x: unknown): x is undefined =>
 /** Guard that narrows `unknown` to `null`. */
 export const isNull: Guard<null> = (x: unknown): x is null => x === null;
 
+/** Guard that narrows `unknown` to `Date` (valid, non-NaN instances). */
+export const isDate: Guard<Date> = (x: unknown): x is Date =>
+  x instanceof Date && !Number.isNaN(x.getTime());
+
 // -- Composition Helpers ---------------------------------------------------
 
 /**

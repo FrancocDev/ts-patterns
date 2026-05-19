@@ -40,6 +40,7 @@ export {
   isSymbol,
   isUndefined,
   isNull,
+  isDate,
   isLiteral,
   isArray,
   isRecord,

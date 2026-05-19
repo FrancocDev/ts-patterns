@@ -7,6 +7,7 @@ import {
   isSymbol,
   isUndefined,
   isNull,
+  isDate,
   isLiteral,
   isArray,
   isRecord,
@@ -62,6 +63,14 @@ describe("Guard Functions", () => {
       expect(isNull(null)).toBe(true);
       expect(isNull(undefined)).toBe(false);
       expect(isNull(0)).toBe(false);
+    });
+
+    it("isDate narrows valid Date instances", () => {
+      expect(isDate(new Date())).toBe(true);
+      expect(isDate(new Date("2026-05-19"))).toBe(true);
+      expect(isDate(new Date("invalid"))).toBe(false);
+      expect(isDate("2026-05-19")).toBe(false);
+      expect(isDate(null)).toBe(false);
     });
 
     it("all primitives reject objects", () => {
